@@ -11,12 +11,7 @@ jobs:
       - checkout
       - run:
           name: install bundler
-          command: |
-          sudo gem update --system
-          echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-          source $BASH_ENV
-          gem install bundler
-                   
+          command: gem install bundler        
       - run:
           name: Which bundler?
           command: bundler -v
