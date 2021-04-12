@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'reationships' do
-    it {have_many :user_1_connections}
-    it {have_many :user_2_connections}
+    it {have_many :user_1_pals}
+    it {have_many :user_2_pals}
   end
 
   describe 'validations' do
