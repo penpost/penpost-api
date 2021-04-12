@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Connection, type: :model do
+RSpec.describe Pal, type: :model do
   describe 'reationships' do
     it {should belong_to :user_1}
     it {should belong_to :user_2}
