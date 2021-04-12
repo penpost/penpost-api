@@ -13,7 +13,9 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def current_pal
-    
-  end
+  # def current_pal(params[:id])
+  #   # pals = Pal.where(user_1_pals and user_2_pals )
+  #   pal = Pal.where('user_1 =?', id)
+  #   pal_info = User.find(pal.user_2.id)
+  # end
 end
