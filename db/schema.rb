@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_171302) do
+ActiveRecord::Schema.define(version: 2021_04_08_231427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pals", force: :cascade do |t|
-    t.bigint "user_1_id", null: false
-    t.bigint "user_2_id", null: false
+  create_table "friendships", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
     t.boolean "current", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_1_id"], name: "index_pals_on_user_1_id"
-    t.index ["user_2_id"], name: "index_pals_on_user_2_id"
+    t.index ["receiver_id"], name: "index_friendships_on_receiver_id"
+    t.index ["sender_id"], name: "index_friendships_on_sender_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +40,4 @@ ActiveRecord::Schema.define(version: 2021_04_12_171302) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "pals", "users", column: "user_1_id"
-  add_foreign_key "pals", "users", column: "user_2_id"
 end

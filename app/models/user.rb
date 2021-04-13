@@ -1,6 +1,9 @@
 class User < ApplicationRecord
-  has_many :user_1_pals, class_name: 'Pal', foreign_key: 'user_1'
-  has_many :user_2_pals, class_name: 'Pal', foreign_key: 'user_2'
+  has_many :friendships_requested, class_name: 'Friendship', foreign_key: 'sender_id', dependent: :destroy
+  has_many :friends, through: :friendships_requested, source: :receiver
+  has_many :friendships_received, class_name: 'Friendship', foreign_key: 'receiver_id', dependent: :destroy
+  has_many :inverse_friends, through: :friendships_received, source: :sender
+  # has_many :friends, through: :friendships, source: :receiver
 
   validates :email, uniqueness: true, presence: true
   validates_presence_of :password, require: true
@@ -12,6 +15,18 @@ class User < ApplicationRecord
   validates_presence_of :country, require: true
 
   has_secure_password
+
+  def friend_request(other_user)
+    friendships_requested.create(receiver_id: other_user.id)
+  end
+
+  def pals?(other_user)
+    pals.include?(other_user)
+  end
+
+  def pals
+    self.friends + self.inverse_friends
+  end
 
   # def current_pal(params[:id])
   #   pal = Pal.where('user_1 =?', id)
