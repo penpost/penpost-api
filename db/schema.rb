@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_04_08_231427) do
   create_table "friendships", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "receiver_id"
-    t.boolean "current", default: false
+    t.boolean "current", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["receiver_id"], name: "index_friendships_on_receiver_id"

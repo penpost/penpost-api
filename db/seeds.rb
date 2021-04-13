@@ -15,9 +15,13 @@ muhammed = User.create!(name: 'Muhammed Pas', email: 'moe@example.com', password
 celine = User.create!(name: 'Celine Dion', email: 'titanic@example.com', password: 'pw1234', street: 'titanic ave', city: 'new york city', state: 'ny', zip: '55523', country: 'united states', address_verified: 1)
 korra = User.create!(name: 'Korra Avatar', email: 'korra@example.com', password: 'pw1234', street: 'water bender st', city: 'republic city', state: 'ny', zip: '55123', country: 'united states', address_verified: 1)
 
-connection_1 = Friendship.create!(user_1: charlie, user_2: mary, current: true)
-connection_2 = Friendship.create!(user_1: mary, user_2: charlie, current: true)
-connection_3 = Friendship.create!(user_1: joe, user_2: muhammed, current: true)
-connection_4 = Friendship.create!(user_1: muhammed, user_2: joe, current: true)
-connection_5 = Friendship.create!(user_1: mary, user_2: joe, current: false)
-connection_6 = Friendship.create!(user_1: joe, user_2: mary, current: false)
+connection_1 = Friendship.create!(sender: charlie, receiver: mary, current: true)
+connection_2 = Friendship.create!(sender: mary, receiver: charlie, current: true)
+connection_3 = Friendship.create!(sender: joe, receiver: muhammed, current: true)
+connection_4 = Friendship.create!(sender: muhammed, receiver: joe, current: true)
+connection_5 = Friendship.create!(sender: mary, receiver: joe, current: false)
+connection_6 = Friendship.create!(sender: joe, receiver: mary, current: false)
+# charlie & muhammed have a current pal, and no past pals
+# mary & joe have both a current and past pal
+# celine has no pals
+# korra has no pals
