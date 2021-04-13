@@ -7,13 +7,6 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # TODO: remove me
-    # field :test_field, String, null: false,
-    #   description: "An example field added by the generator"
-    # def test_field
-    #   "Hello World!"
-    # end
-
     field :user, Types::UserType, null: false do 
       argument :id, ID, required: true 
     end
@@ -27,13 +20,10 @@ module Types
     end
 
     def current_pal(id:)
-      user = User.find(id) #find user1
-      user.current_pal #find user2
+      user = User.find(id) #find user
+      user.current_pal #find current_pal for user
     end
-    # this works because it takes user1 and finds its user 2
-    # finds user1 by id and gets its user2 
-
-
-
+    # this works because it takes user and finds its current pal
+    # finds user1 by id and gets its current pal 
   end
 end

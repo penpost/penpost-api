@@ -29,6 +29,8 @@ class User < ApplicationRecord
   end
 
   def current_pal
+    return nil if self.friendships_received.active.empty? && self.friendships_requested.active.empty?
+
     if self.friendships_received.active.empty?
       x = self.friendships_requested.active.first
       User.find(x.receiver_id)

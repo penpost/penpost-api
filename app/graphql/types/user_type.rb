@@ -10,7 +10,7 @@ class Types::UserType < Types::BaseObject
   field :zip, String, null: false 
   field :country, String, null: false 
   field :address_verified, Boolean, null: false 
-  field :active_pal, Types::UserType, null: false 
+  field :active_pal, Types::UserType, null: true 
   # field :active_pal, Types::UserConnectionPage, null: false 
   # field :pals, Types::PalType.connection_type, null: false 
 
