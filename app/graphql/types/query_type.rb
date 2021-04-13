@@ -17,8 +17,23 @@ module Types
     field :user, Types::UserType, null: false do 
       argument :id, ID, required: true 
     end
+
     def user(id:)
       User.find(id)
     end
+
+    field :current_pal, Types::UserType, null: false do 
+      argument :id, ID, required: true 
+    end
+
+    def current_pal(id:)
+      user = User.find(id) #find user1
+      user.current_pal #find user2
+    end
+    # this works because it takes user1 and finds its user 2
+    # finds user1 by id and gets its user2 
+
+
+
   end
 end
