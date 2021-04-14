@@ -8,6 +8,7 @@ module Types
     # end
 
     field :random_pal, mutation: Mutations::RandomPal
+    field :edit_user, mutation: Mutations::EditUser
 
   end
 end
