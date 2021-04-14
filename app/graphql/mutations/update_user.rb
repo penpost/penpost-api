@@ -1,4 +1,4 @@
-class Mutations::EditUser < Mutations::BaseMutation
+class Mutations::UpdateUser < Mutations::BaseMutation
   argument :id, ID, required: true 
   argument :password, String, required: false 
   argument :name, String, required: false 
