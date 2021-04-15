@@ -137,15 +137,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Adam Etzion [GitHub](https://github.com/aetzion1) [LinkedIn](https://www.linkedin.com/in/adametzion/)
+Adam Etzion - [GitHub](https://github.com/aetzion1) [LinkedIn](https://www.linkedin.com/in/adametzion/)
 
-Gabrielle
+Gabrielle - [GitHub]() [LinkedIn]()
 
-Kelsie
+Kelsie - [GitHub]() [LinkedIn]()
 
-Jeff
+Jeff - [GitHub]() [LinkedIn]()
 
-Yesi
+Yesi Meza - [GitHub](https://github.com/Yesi-MC) [LinkedIn](https://www.linkedin.com/in/yesimeza/)
 
 Project Link: [https://github.com/penpost/penpost-api](https://github.com/penpost/penpost-api)
 
