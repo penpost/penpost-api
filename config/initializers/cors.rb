@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'penpost-web.vercel.app', 'http://localhost:3000'
+    origins 'penpost-web.vercel.app', 'localhost:3000'
 
     resource '*',
       headers: :any,
