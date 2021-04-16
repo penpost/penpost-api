@@ -43,16 +43,10 @@ class User < ApplicationRecord
 
   def self.find_unmatched_user(user_1_id)
     all_user = User.all.size
-    # AE: If we have 10,000 users .times method can slow down our application
-    # Rather use SQL or ActiveRecord to speed this up (searching within a DB is faster)
-    ## scope :matched, -> { where('current_pal != ?', nil) }
-    ## scope :unmatched, -> { where('current_pal = ?', nil) }
-    ## potential_pal = User.unmatched.sample.where(id != self.id)
     all_user.times do 
       all_users_ids = User.all.pluck(:id)
       sample_id = all_users_ids.sample
       potential_pal = User.find(sample_id) 
-      # rather than check whether the potential pal has recieved or sent friend requests, lets just make sure they have no current pal
       if sample_id != user_1_id && potential_pal.friendships_requested.where(current: true) == [] && potential_pal.friendships_received.where(current: true) == []
         return potential_pal
       end 
