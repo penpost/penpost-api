@@ -4,9 +4,9 @@ class User < ApplicationRecord
   has_many :friendships_received, class_name: 'Friendship', foreign_key: 'receiver_id', dependent: :destroy
   has_many :inverse_friends, through: :friendships_received, source: :sender
   # has_many :friends, through: :friendships, source: :receiver
-
+  # MAKE SURE TO UPDATE PW TO NOT ALLLOW NIL. ONLY SET FOR MVP
   validates :email, uniqueness: true, presence: true
-  validates_presence_of :password, require: true
+  validates_presence_of :password, require: true, allow_nil: true
   validates_presence_of :name, require: true
   validates_presence_of :street, require: true
   validates_presence_of :city, require: true
