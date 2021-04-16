@@ -9,11 +9,4 @@ class Friendship < ApplicationRecord
   scope :not_active, -> { where('current =?', false) }
 
   # DONT ALLOW CONNECTION IF ADDRESS NOT VERIFIED FOR BOTH USERS
-
-  # def self.create_relationships(user_1, user_2)
-  #   Pal.create(user_1: user_1, user_2: user_2, current: true)
-  #   Pal.create(user_1: user_2, user_2: user_1, current: true)
-  # end
-  #similar to what we had in viewing party(inverse relationship)
-
 end
