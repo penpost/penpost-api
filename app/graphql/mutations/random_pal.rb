@@ -14,6 +14,10 @@ class Mutations::RandomPal < Mutations::BaseMutation
         "All users have current friends"
      end 
     user_2 
+    # Do we need this in case the provided args are incorrect / etc? Not sure
+    # rescue ActiveRecord::RecordInvalid => e
+    #   GraphQL::ExecutionError.new("Invalid input: #{e.record.errors.full_messages.join(', ')}")
+    # end
   end
 
 
