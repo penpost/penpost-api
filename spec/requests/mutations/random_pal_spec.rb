@@ -4,7 +4,7 @@ RSpec.describe "Graphql create random friendship" do
 it "can create a random pen pal relationship" do 
   celine = User.create!(name: 'Celine Dion', email: 'titanic@example.com', password: 'pw1234', street: 'titanic ave', city: 'new york city', state: 'ny', zip: '55523', country: 'united states', address_verified: 1)
   korra = User.create!(name: 'Korra Avatar', email: 'korra@example.com', password: 'pw1234', street: 'water bender st', city: 'republic city', state: 'ny', zip: '55123', country: 'united states', address_verified: 1)
-  connection1 = Friendship.create!(sender: celine, receiver: korra, current: false)
+  # connection1 = Friendship.create!(sender: celine, receiver: korra, current: false)
 
 
   query_params =  "mutation {

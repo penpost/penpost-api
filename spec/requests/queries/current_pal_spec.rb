@@ -36,8 +36,7 @@ RSpec.describe "Graphql current pal query" do
 
     post graphql_path, params: { query: query_params } 
 
-    result = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry                        
+    result = JSON.parse(response.body, symbolize_names: true)                       
     expect(response).to be_successful 
     expect(response.status).to eq(200)
     expect(response.content_type).to eq("application/json; charset=utf-8")
