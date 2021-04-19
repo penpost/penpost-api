@@ -32,14 +32,33 @@ RSpec.describe User, type: :model do
         @connection1 = Friendship.create!(sender: @charlie, receiver: @mary, current: true)
         @connection2 = Friendship.create!(sender: @joe, receiver: @muhammed, current: true)
         @connection3 = Friendship.create!(sender: @mary, receiver: @joe, current: false)
-        @connection4 = Friendship.create!(sender: @joe, receiver: @mary, current: false)
 
 
       end 
-      # it "friend_request" do 
-      #   # require 'pry'; binding.pry
-      #   expect(@charlie.friend_request(@mary)).to eq(@connection1)
+      it "it can create friend_request" do 
+   
+        expect(@celine.friend_request(@korra)).to be_a(Friendship)
+      end
 
+      it "knows the relationship - pals?" do 
+        expect(@charlie.pals?(@mary)).to eq(true)
+        expect(@charlie.pals?(@joe)).to eq(false)
+      end
+
+      it "knows all users pals" do 
+        expect(@charlie.pals).to eq([@mary])
+        expect(@mary.pals).to eq([@joe, @charlie])
+        expect(@korra.pals).to eq([])
+      end
+
+      it "knows the users current_pal" do 
+        expect(@mary.current_pal).to eq(@charlie)
+        expect(@mary.current_pal).to_not eq(@joe)
+        expect(@charlie.current_pal).to eq(@mary)
+      end
+
+      # it "it can find_unmatched_user" do 
+      #   expect(User.find_unmatched_user(@korra)).to eq(@celine)
       # end
     end
   end
