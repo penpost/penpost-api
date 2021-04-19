@@ -19,7 +19,7 @@ class Mutations::UpdateUser < Mutations::BaseMutation
   type Types::UserType
 
   def resolve(id:, **args)
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     user = User.find(id)
     user.update!(args)
     user
