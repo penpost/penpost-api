@@ -1,9 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "Graphql create random friendship" do 
+RSpec.describe "Graphql create random friendship" do
+before :each do 
+  Friendship.destroy_all
+  User.destroy_all
+end
 it "can create a random pen pal relationship" do 
-  celine = User.create!(name: 'Celine Dion', email: 'titanic@example.com', password: 'pw1234', street: 'titanic ave', city: 'new york city', state: 'ny', zip: '55523', country: 'united states', address_verified: 1)
-  korra = User.create!(name: 'Korra Avatar', email: 'korra@example.com', password: 'pw1234', street: 'water bender st', city: 'republic city', state: 'ny', zip: '55123', country: 'united states', address_verified: 1)
+  celine = User.create!(name: 'Celine D', email: 'titanic@example.com', password: 'pw1234', street: 'titanic ave', city: 'new york city', state: 'ny', zip: '55523', country: 'united states', address_verified: 1)
+  korra = User.create!(name: 'Korra A', email: 'korra@example.com', password: 'pw1234', street: 'water bender st', city: 'republic city', state: 'ny', zip: '55123', country: 'united states', address_verified: 1)
 
   query_params =  "mutation {
                     randomPal( input: {id: #{celine.id} } )
@@ -19,6 +23,7 @@ it "can create a random pen pal relationship" do
                     }"
 
   post graphql_path, params: { query: query_params }  
+
 
   result = JSON.parse(response.body, symbolize_names: true )
 
@@ -66,7 +71,6 @@ it "will return error message if all users have penpals already" do
   celine = User.create!(name: 'Celine Dion', email: 'titanic@example.com', password: 'pw1234', street: 'titanic ave', city: 'new york city', state: 'ny', zip: '55523', country: 'united states', address_verified: 1)
   korra = User.create!(name: 'Korra Avatar', email: 'korra@example.com', password: 'pw1234', street: 'water bender st', city: 'republic city', state: 'ny', zip: '55123', country: 'united states', address_verified: 1)
   connection1 = Friendship.create!(sender: celine, receiver: korra, current: true)
-
 
   query_params =  "mutation {
                     randomPal( input: {id: #{celine.id} } )
