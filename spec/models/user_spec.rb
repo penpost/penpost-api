@@ -32,11 +32,9 @@ RSpec.describe User, type: :model do
         @connection1 = Friendship.create!(sender: @charlie, receiver: @mary, current: true)
         @connection2 = Friendship.create!(sender: @joe, receiver: @muhammed, current: true)
         @connection3 = Friendship.create!(sender: @mary, receiver: @joe, current: false)
-
-
       end 
+
       it "it can create friend_request" do 
-   
         expect(@celine.friend_request(@korra)).to be_a(Friendship)
       end
 
@@ -58,10 +56,10 @@ RSpec.describe User, type: :model do
       end
 
       it "it can find_unmatched_user" do
-        # require 'pry'; binding.pry
-        expect(User.find_unmatched_user(@korra)).to eq(@celine)
-        expect(User.find_unmatched_user(@celine)).to eq(@korra)
-        expect(User.find_unmatched_user(@celine)).to_not eq(@celine)
+        require 'pry'; binding.pry
+        expect(@korra.find_unmatched_user).to eq(@celine)
+        expect(@celine.find_unmatched_user).to eq(@korra)
+        expect(@celine.find_unmatched_user).to_not eq(@celine)
       end
     end
   end

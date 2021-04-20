@@ -41,16 +41,11 @@ class User < ApplicationRecord
   end
 
 
-  def self.find_unmatched_user(user_1_id)
-    users = User.where('id != ?', user_1_id) 
-    all_user = users.size
-    all_user.times do 
-      all_users_ids = users.pluck(:id)
-      sample_id = all_users_ids.sample
-      potential_pal = User.find(sample_id) 
-      if potential_pal.friendships_requested.where(current: true) == [] && potential_pal.friendships_received.where(current: true) == []
-        return potential_pal
-      end 
+  def find_unmatched_user
+    User.find do |user|
+      user.id != self.id &&
+      user.friendships_requested.where(current: true) == [] &&
+      user.friendships_received.where(current: true) == []
     end
   end
 
