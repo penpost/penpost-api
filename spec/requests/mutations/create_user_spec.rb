@@ -29,3 +29,4 @@ RSpec.describe Mutations::CreateUser do
     end
   end
 end
+
