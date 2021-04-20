@@ -40,7 +40,6 @@ RSpec.describe "Graphql current pal query" do
     expect(response).to be_successful 
     expect(response.status).to eq(200)
     expect(response.content_type).to eq("application/json; charset=utf-8")
-# require 'pry'; binding.pry
     expect(result).to have_key(:data)                          
     expect(result[:data]).to be_a(Hash)                          
     expect(result[:data]).to have_key(:user)                          
