@@ -75,13 +75,14 @@ This is the backend component of the PenPost service-oriented architecture. The 
 
 ### Built With
 
-* [Ruby on Rails](https://rubyonrails.org/)
-* [PostgreSQL](https://www.postgresql.org/)
-* [GraphQL](https://graphql.org/)
-* [RSpec](https://github.com/rspec/rspec-rails)
 * [Circle CI](https://circleci.com/)
+* [Github Projects](https://github.com/aetzion1/tweeter/projects/1)
+* [GraphQL](https://graphql.org/)
 * [Heroku](https://heroku.com/)
-* [Github Project Board](https://github.com/aetzion1/tweeter/projects/1)
+* [PostgreSQL](https://www.postgresql.org/)
+* [Postman](https://www.postman.com/)
+* [RSpec](https://github.com/rspec/rspec-rails)
+* [Ruby on Rails](https://rubyonrails.org/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -129,6 +130,8 @@ The user can draft a postcard directly on the web app - and is able to preview t
 <img src="app/assets/images/wireframes.png">
 
 Development was managed via a kandban-style [Github project board](https://github.com/orgs/penpost/projects/1).
+
+Postman was utilized to test teh various graphql requests and responses. You can import the vairous calls [here](app/assets/resources/postman.json).
 
 See the [open issues](https://github.com/penpost/penpost-api/issues) for a list of proposed features (and known issues).
 
