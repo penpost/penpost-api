@@ -23,7 +23,7 @@
   <h3 align="center">PenPost</h3>
 
   <p align="center">
-    Real people, real postcards, real connections. PenPost allows you to send a PostCard to a friend with a click of a button. You snap an image and write a ntoe, and we'll do all the work.
+    Real people, real postcards, real connections. PenPost allows you to send a PostCard to a friend with a click of a button. Snap an image, write a note, and we'll do all the work.
     <br />
     <a href="https://github.com/penpost/penpost-api"><strong>Explore the docs »</strong></a>
     <br />
@@ -69,18 +69,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![PenPost Screen Shot][product-screenshot]](apps/assets/images/screenshot.png)
 This is the backend component of the PenPost service-oriented architecture. The React+Apollo front-end communicates with this back-end via an API. This repository utilizes GraphQL to expose that API to meet the front-end requirements.
+
+ <img src="app/assets/images/architecture.png">
 
 ### Built With
 
-* [Ruby on Rails](https://rubyonrails.org/)
-* [PostgreSQL](https://www.postgresql.org/)
-* [GraphQL](https://graphql.org/)
-* [RSpec](https://github.com/rspec/rspec-rails)
 * [Circle CI](https://circleci.com/)
+* [Github Projects](https://github.com/aetzion1/tweeter/projects/1)
+* [GraphQL](https://graphql.org/)
 * [Heroku](https://heroku.com/)
-* [Github Project Board](https://github.com/aetzion1/tweeter/projects/1)
+* [PostgreSQL](https://www.postgresql.org/)
+* [Postman](https://www.postman.com/)
+* [RSpec](https://github.com/rspec/rspec-rails)
+* [Ruby on Rails](https://rubyonrails.org/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -95,9 +97,9 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 
 1. Fork the repository and clone the repo
-   ```sh
-   git clone https://github.com/<USERNAME>/penpost-api.git
-   ```
+  ```sh
+  git clone https://github.com/<USERNAME>/penpost-api.git
+  ```
 2. Run bundle install
   ```sh
    bundle install
@@ -110,11 +112,26 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Additional screenshots and fucnctionality of each page TBD.
-Link to demo recording TBD.
+Users are able to log into their accounts and access their dashboard.
+
+The dashboard will display a user's information (address, description) and allow them to edit this info.
+
+The dashboard will also display the user's current PenPal's name and city - and an option to end the realtionship. If the user has no active PenPal there will be a button to create one!
+
+The user can draft a postcard directly on the web app - and is able to preview the postcard prior to sending.
 
 <!-- ROADMAP -->
 ## Roadmap
+
+ The app was developed with the help of a 5-person team, over the course of 10 days. The team began with an initial product brainstorm and wireframes.
+
+<img src="app/assets/images/brainstorm.png">
+
+<img src="app/assets/images/wireframes.png">
+
+Development was managed via a kandban-style [Github project board](https://github.com/orgs/penpost/projects/1).
+
+Postman was utilized to test teh various graphql requests and responses. You can import the vairous calls [here](app/assets/resources/postman.json).
 
 See the [open issues](https://github.com/penpost/penpost-api/issues) for a list of proposed features (and known issues).
 
@@ -141,19 +158,20 @@ Adam Etzion - [GitHub](https://github.com/aetzion1) [LinkedIn](https://www.linke
 
 Gabrielle - [GitHub]() [LinkedIn]()
 
-Kelsie - [GitHub]() [LinkedIn]()
-
 Jeff - [GitHub]() [LinkedIn]()
+
+Kelsie - [GitHub]() [LinkedIn]()
 
 Yesi Meza - [GitHub](https://github.com/Yesi-MC) [LinkedIn](https://www.linkedin.com/in/yesimeza/)
 
-Project Link: [https://github.com/penpost/penpost-api](https://github.com/penpost/penpost-api)
+Project Repository Link: [https://github.com/penpost/penpost-api](https://github.com/penpost/penpost-api)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
 * [Img Shields](https://shields.io)
-* [Pexels for image above](https://www.pexels.com/)
+* [Pexels](https://www.pexels.com/) for above image
+* [Miro](https://www.miro.com/) for whiteboard tools
 
 
 <!-- MARKDOWN LINKS & IMAGES -->

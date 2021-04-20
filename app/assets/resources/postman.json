@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "bbaf55a2-4bc0-4fe7-af3d-00fabbe057ad",
+		"name": "PenPost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sign in user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n    signinUser(input: {\n        credentials: {\n          email: \"korra@example.com\",\n          password: \"pw1234\"\n        }\n    }){\n        token\n        user {\n            id\n        }\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User by ID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "id",
+						"value": "6",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    user(id: 1)\n    {\n        name\n        email\n        description\n        street \n        city \n        state \n        zip \n        country\n        addressVerified\n        activePal\n        {\n            name\n            email\n            description\n            street \n            city\n            state\n            zip\n            country \n        }\n    }         \n\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "current pal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    currentPal(id: 1)\n        {\n        name\n        email\n        description\n        street\n        city\n        state\n        zip\n        country\n        addressVerified\n        }\n    \n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation { createUser( input: {\n    name: \"naruto\"\n    description: \"hokage\" \n    street: \"hidden leaf\"\n    city: \"co\"\n    zip: \"80210\"\n    state: \"Co\"\n    country: \"USA\"\n    authProvider:{\n        credentials: {\n            email: \"testing123@example.com\"\n            password: \"[omitted]\"\n\n    }\n    }\n\n    })\n    {\n    name\n    email\n\n    }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n    updateUser( input: {\n        id: 5\n        description: \"my updated about me!\"} )\n        {\n        name\n        email\n        street\n        city\n        state\n        zip\n        country\n        }\n    \n    }\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign random pen pal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n    randomPal( input: {id: 6})\n        {\n        name\n        email\n        street\n        city\n        state\n        zip\n        country\n        }\n    \n    }\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "end_friendship",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "context",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\n    endFriendship( input: {id: 5} )\n        {\n       \n      current\n        }\n    \n    }\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
