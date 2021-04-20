@@ -21,7 +21,3 @@ connection_3 = Friendship.create!(sender: joe, receiver: muhammed, current: true
 connection_4 = Friendship.create!(sender: muhammed, receiver: joe, current: true)
 connection_5 = Friendship.create!(sender: mary, receiver: joe, current: false)
 connection_6 = Friendship.create!(sender: joe, receiver: mary, current: false)
-# charlie & muhammed have a current pal, and no past pals
-# mary & joe have both a current and past pal
-# celine has no pals
-# korra has no pals

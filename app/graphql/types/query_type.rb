@@ -20,10 +20,9 @@ module Types
     end
 
     def current_pal(id:)
-      user = User.find(id) #find user
-      user.current_pal #find current_pal for user
+      user = User.find(id) 
+      user.current_pal 
     end
-    # this works because it takes user and finds its current pal
-    # finds user1 by id and gets its current pal 
+  
   end
 end
