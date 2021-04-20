@@ -58,6 +58,7 @@ RSpec.describe User, type: :model do
       end
 
       it "it can find_unmatched_user" do
+        # require 'pry'; binding.pry
         expect(User.find_unmatched_user(@korra)).to eq(@celine)
         expect(User.find_unmatched_user(@celine)).to eq(@korra)
         expect(User.find_unmatched_user(@celine)).to_not eq(@celine)
