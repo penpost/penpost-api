@@ -57,9 +57,11 @@ RSpec.describe User, type: :model do
         expect(@charlie.current_pal).to eq(@mary)
       end
 
-      # it "it can find_unmatched_user" do 
-      #   expect(User.find_unmatched_user(@korra)).to eq(@celine)
-      # end
+      it "it can find_unmatched_user" do
+        expect(User.find_unmatched_user(@korra)).to eq(@celine)
+        expect(User.find_unmatched_user(@celine)).to eq(@korra)
+        expect(User.find_unmatched_user(@celine)).to_not eq(@celine)
+      end
     end
   end
 end
