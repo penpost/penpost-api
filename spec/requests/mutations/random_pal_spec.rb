@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Graphql create random friendship" do
-before :each do 
+before :all do 
   Friendship.destroy_all
   User.destroy_all
 end
