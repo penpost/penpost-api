@@ -8,7 +8,6 @@ class GraphqlController < ApplicationController
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
-    require 'pry'; binding.pry
     context = {
       session: session,
       current_user: current_user,
@@ -24,7 +23,6 @@ class GraphqlController < ApplicationController
 
   # gets current user from token stored in the session
   def current_user
-    require 'pry'; binding.pry
     # if we want to change the sign-in strategy, this is the place to do it
     return unless session[:token]
 
